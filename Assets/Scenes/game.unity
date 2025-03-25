@@ -644,7 +644,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 14, y: 1, z: 1}
+  m_Size: {x: 14, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &166258683
 MeshRenderer:
@@ -1275,7 +1275,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 330794655}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1284290626}
+        m_TargetAssemblyTypeName: wizard, Assembly-CSharp
+        m_MethodName: OnFalseButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &330794655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3035,6 +3047,7 @@ GameObject:
   - component: {fileID: 1284290624}
   - component: {fileID: 1284290623}
   - component: {fileID: 1284290622}
+  - component: {fileID: 1284290626}
   m_Layer: 5
   m_Name: Dialogue
   m_TagString: Untagged
@@ -3125,6 +3138,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1284290626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284290621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15369da346dfcba4baf5e7e3a60bdce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Quiz1: {fileID: 130626176}
+  Bridge: {fileID: 1492991464}
+  barrier: {fileID: 929563304}
+  wizardchar: {fileID: 1552036982}
 --- !u!1 &1368029236
 GameObject:
   m_ObjectHideFlags: 0
@@ -3521,6 +3550,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 860045657}
   m_SourcePrefab: {fileID: 100100000, guid: e8f1ec35c95ef9e479422e198df794d1, type: 3}
+--- !u!1 &1492991464 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f582be07ebdb9b343b83509e4b320304, type: 3}
+  m_PrefabInstance: {fileID: 1864576935}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1499587687
 GameObject:
   m_ObjectHideFlags: 0
@@ -3604,13 +3638,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1284290626}
+        m_TargetAssemblyTypeName: wizard, Assembly-CSharp
+        m_MethodName: OnTrueButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3816,19 +3850,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.914423, y: 1.9216709, z: 2}
   m_Center: {x: -0.042788506, y: -0.039164543, z: 0}
---- !u!114 &1552036985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1552036982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15369da346dfcba4baf5e7e3a60bdce0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Quiz1: {fileID: 130626176}
 --- !u!54 &1552036987
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3856,6 +3877,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &1552036989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552036982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15369da346dfcba4baf5e7e3a60bdce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Quiz1: {fileID: 130626176}
+  Bridge: {fileID: 0}
+  barrier: {fileID: 0}
+  wizardchar: {fileID: 0}
 --- !u!1 &1587357162
 GameObject:
   m_ObjectHideFlags: 0
@@ -4582,10 +4619,10 @@ PrefabInstance:
       addedObject: {fileID: 1552036984}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 17d3fa8419a04c14c96044e87e719f6c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1552036985}
+      addedObject: {fileID: 1552036987}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 17d3fa8419a04c14c96044e87e719f6c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1552036987}
+      addedObject: {fileID: 1552036989}
   m_SourcePrefab: {fileID: 100100000, guid: 17d3fa8419a04c14c96044e87e719f6c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
