@@ -15,6 +15,7 @@ public class wizard : MonoBehaviour
         if (collision.gameObject.CompareTag("player"))
         {
             Quiz1.SetActive(true); // Unhide the Quiz1 panel
+            Time.timeScale = 0f; // Pause the game
             
 
 
@@ -27,12 +28,13 @@ public class wizard : MonoBehaviour
         Bridge.SetActive(true); // Unhide the Bridge
         barrier.SetActive(false); // Hide the barrier
         wizardchar.SetActive(false); // Hide the wizard
-        
+        Time.timeScale = 1f; // Resume the game
     }
 
     public void OnFalseButtonClicked()
     {
         Quiz1.SetActive(false); // Hide the Quiz1 panel
         Debug.Log("False button clicked!");
+        Time.timeScale = 1f; // Resume the game
     }
 }
