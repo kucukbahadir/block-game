@@ -2183,7 +2183,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ab94f8fc685556e4a821b89c117ddd89, type: 2}
     - target: {fileID: 919132149155446097, guid: 17d3fa8419a04c14c96044e87e719f6c, type: 3}
       propertyPath: m_Name
-      value: wizard (1)
+      value: wizard2
       objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: 17d3fa8419a04c14c96044e87e719f6c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2247,7 +2247,9 @@ MonoBehaviour:
   Quiz1: {fileID: 130626176}
   Bridge: {fileID: 0}
   barrier: {fileID: 0}
-  wizardchar: {fileID: 0}
+  wizardchar1: {fileID: 0}
+  wizardchar2: {fileID: 0}
+  portal: {fileID: 0}
 --- !u!54 &679465604
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3556,7 +3558,9 @@ MonoBehaviour:
   Quiz1: {fileID: 130626176}
   Bridge: {fileID: 1492991464}
   barrier: {fileID: 929563304}
-  wizardchar: {fileID: 1552036982}
+  wizardchar1: {fileID: 0}
+  wizardchar2: {fileID: 0}
+  portal: {fileID: 0}
 --- !u!1 &1368029236
 GameObject:
   m_ObjectHideFlags: 0
@@ -4295,7 +4299,9 @@ MonoBehaviour:
   Quiz1: {fileID: 130626176}
   Bridge: {fileID: 0}
   barrier: {fileID: 0}
-  wizardchar: {fileID: 0}
+  wizardchar1: {fileID: 0}
+  wizardchar2: {fileID: 0}
+  portal: {fileID: 0}
 --- !u!1 &1587357162
 GameObject:
   m_ObjectHideFlags: 0

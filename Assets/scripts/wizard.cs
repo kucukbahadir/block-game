@@ -7,7 +7,9 @@ public class wizard : MonoBehaviour
     public GameObject Quiz1; // Assign the Quiz1 panel in the Inspector
     public GameObject Bridge; // Assign the Bridge in the Inspector
     public GameObject barrier; // Assign the barrier in the Inspector
-    public GameObject wizardchar; // Assign the wizard in the Inspector
+    public GameObject wizardchar1; // Assign the wizard in the Inspector
+    public GameObject wizardchar2; // Assign the wizard in the Inspector
+    public GameObject portal;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -27,8 +29,9 @@ public class wizard : MonoBehaviour
         Debug.Log("True button clicked!");
         Bridge.SetActive(true); // Unhide the Bridge
         barrier.SetActive(false); // Hide the barrier
-        wizardchar.SetActive(false); // Hide the wizard
+        wizardchar1.SetActive(false); // Hide the wizard
         Time.timeScale = 1f; // Resume the game
+
     }
 
     public void OnFalseButtonClicked()
