@@ -917,6 +917,74 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 197175963}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &228609500 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cf0611adf99a40a46b6d21b0303029f0, type: 3}
+  m_PrefabInstance: {fileID: 816048755}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &228609502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228609500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2252f09894177ab48b158aff73727c6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portalthing: {fileID: 228609500}
+  portalthing2: {fileID: 1604178331}
+  player: {fileID: 860045652}
+--- !u!65 &228609503
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228609500}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.05, y: 2.52, z: 1.56}
+  m_Center: {x: 0, y: 1.57, z: 1.62}
+--- !u!54 &228609506
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228609500}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!1001 &241423868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -973,10 +1041,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: portal (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cf0611adf99a40a46b6d21b0303029f0, type: 3}
+      propertyPath: m_TagString
+      value: portal2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cf0611adf99a40a46b6d21b0303029f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1604178334}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cf0611adf99a40a46b6d21b0303029f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1604178333}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cf0611adf99a40a46b6d21b0303029f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1604178337}
   m_SourcePrefab: {fileID: 100100000, guid: cf0611adf99a40a46b6d21b0303029f0, type: 3}
 --- !u!1 &249082840
 GameObject:
@@ -2185,6 +2266,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: wizard2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 17d3fa8419a04c14c96044e87e719f6c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 17d3fa8419a04c14c96044e87e719f6c, type: 3}
+      propertyPath: m_TagString
+      value: Wizard2
+      objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: 17d3fa8419a04c14c96044e87e719f6c, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -2225,31 +2314,13 @@ PrefabInstance:
       addedObject: {fileID: 679465604}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 17d3fa8419a04c14c96044e87e719f6c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 679465603}
+      addedObject: {fileID: 679465606}
   m_SourcePrefab: {fileID: 100100000, guid: 17d3fa8419a04c14c96044e87e719f6c, type: 3}
 --- !u!1 &679465602 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 17d3fa8419a04c14c96044e87e719f6c, type: 3}
   m_PrefabInstance: {fileID: 679465601}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &679465603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679465602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15369da346dfcba4baf5e7e3a60bdce0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Quiz1: {fileID: 130626176}
-  Bridge: {fileID: 0}
-  barrier: {fileID: 0}
-  wizardchar1: {fileID: 0}
-  wizardchar2: {fileID: 0}
-  portal: {fileID: 0}
 --- !u!54 &679465604
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2298,6 +2369,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.914423, y: 1.9216709, z: 2}
   m_Center: {x: -0.042788506, y: -0.039164543, z: 0}
+--- !u!114 &679465606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679465602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34fa92d6a8dc0c94abaced7e6cc925ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Quiz1: {fileID: 130626176}
+  Portal: {fileID: 1604178331}
+  wizardchar2: {fileID: 679465602}
 --- !u!1 &684599186
 GameObject:
   m_ObjectHideFlags: 0
@@ -2491,10 +2577,23 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cf0611adf99a40a46b6d21b0303029f0, type: 3}
+      propertyPath: m_TagString
+      value: portal1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cf0611adf99a40a46b6d21b0303029f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 228609503}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cf0611adf99a40a46b6d21b0303029f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 228609502}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cf0611adf99a40a46b6d21b0303029f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 228609506}
   m_SourcePrefab: {fileID: 100100000, guid: cf0611adf99a40a46b6d21b0303029f0, type: 3}
 --- !u!1 &832575517
 GameObject:
@@ -2762,7 +2861,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &929563304
 GameObject:
   m_ObjectHideFlags: 0
@@ -3558,9 +3657,9 @@ MonoBehaviour:
   Quiz1: {fileID: 130626176}
   Bridge: {fileID: 1492991464}
   barrier: {fileID: 929563304}
-  wizardchar1: {fileID: 0}
-  wizardchar2: {fileID: 0}
-  portal: {fileID: 0}
+  wizardchar1: {fileID: 1552036982}
+  wizardchar2: {fileID: 679465602}
+  portal: {fileID: 228609500}
 --- !u!1 &1368029236
 GameObject:
   m_ObjectHideFlags: 0
@@ -4297,9 +4396,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Quiz1: {fileID: 130626176}
-  Bridge: {fileID: 0}
-  barrier: {fileID: 0}
-  wizardchar1: {fileID: 0}
+  Bridge: {fileID: 1492991464}
+  barrier: {fileID: 929563304}
+  wizardchar1: {fileID: 1552036982}
   wizardchar2: {fileID: 0}
   portal: {fileID: 0}
 --- !u!1 &1587357162
@@ -4410,6 +4509,74 @@ Transform:
   m_Children: []
   m_Father: {fileID: 27489316}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1604178331 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cf0611adf99a40a46b6d21b0303029f0, type: 3}
+  m_PrefabInstance: {fileID: 241423868}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1604178333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604178331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8825af57f8677a14e9d96f5d19ead37d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portalthing: {fileID: 228609500}
+  portalthing2: {fileID: 1604178331}
+  player: {fileID: 860045652}
+--- !u!65 &1604178334
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604178331}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 1.76, z: 1.29}
+  m_Center: {x: -0, y: 1.62, z: 1.67}
+--- !u!54 &1604178337
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604178331}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!1 &1718808805
 GameObject:
   m_ObjectHideFlags: 0
@@ -4990,6 +5157,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 17d3fa8419a04c14c96044e87e719f6c, type: 3}
       propertyPath: m_Name
       value: wizard
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 17d3fa8419a04c14c96044e87e719f6c, type: 3}
+      propertyPath: m_TagString
+      value: Wizard1
       objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: 17d3fa8419a04c14c96044e87e719f6c, type: 3}
       propertyPath: m_LocalPosition.y

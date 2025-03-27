@@ -9,7 +9,8 @@ public class wizard : MonoBehaviour
     public GameObject barrier; // Assign the barrier in the Inspector
     public GameObject wizardchar1; // Assign the wizard in the Inspector
     public GameObject wizardchar2; // Assign the wizard in the Inspector
-    public GameObject portal;
+    public GameObject portal; // Assign the portal in the Inspector
+
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -25,19 +26,44 @@ public class wizard : MonoBehaviour
     }
     public void OnTrueButtonClicked()
     {
-        Quiz1.SetActive(false); // Hide the Quiz1 panel
-        Debug.Log("True button clicked!");
-        Bridge.SetActive(true); // Unhide the Bridge
-        barrier.SetActive(false); // Hide the barrier
-        wizardchar1.SetActive(false); // Hide the wizard
-        Time.timeScale = 1f; // Resume the game
-
+        // Ensure the function works correctly when called by the True button
+        if (Quiz1.activeSelf) // Check if the Quiz1 panel is active
+        {
+            if (wizardchar1.activeSelf) // Check if Wizard1 is active
+            {
+                Quiz1.SetActive(false); // Hide the Quiz1 panel
+                Debug.Log("True button clicked!");
+                Bridge.SetActive(true); // Unhide the Bridge
+                barrier.SetActive(false); // Hide the barrier
+                wizardchar1.SetActive(false); // Hide the wizard
+                wizardchar2.SetActive(true); // Unhide the wizard
+                Time.timeScale = 1f; // Resume the game
+            }
+            else if (wizardchar2.activeSelf) // Check if Wizard2 is active
+            {
+                Quiz1.SetActive(false); // Hide the Quiz1 panel
+                Debug.Log("True button clicked!");
+                portal.SetActive(true); // Unhide the portal
+                wizardchar2.SetActive(false); // Hide the wizard
+                Time.timeScale = 1f; // Resume the game
+            }
+        }
     }
 
     public void OnFalseButtonClicked()
     {
-        Quiz1.SetActive(false); // Hide the Quiz1 panel
-        Debug.Log("False button clicked!");
-        Time.timeScale = 1f; // Resume the game
+        if (wizardchar1.activeSelf)
+        {
+            Quiz1.SetActive(false); // Hide the Quiz1 panel
+            Debug.Log("False button clicked!");
+            Time.timeScale = 1f; // Resume the game
+        }
+        else if (wizardchar2.activeSelf)
+        {
+            Quiz1.SetActive(false); // Hide the Quiz1 panel
+            Debug.Log("False button clicked!");
+            Time.timeScale = 1f; // Resume the game
+        }
+        
     }
 }

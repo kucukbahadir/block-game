@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - player
+  - Wizard1
+  - Wizard2
+  - portal1
+  - portal2
   layers:
   - Default
   - TransparentFX
