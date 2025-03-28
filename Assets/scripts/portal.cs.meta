@@ -1,2 +1,14 @@
 fileFormatVersion: 2
 guid: 2252f09894177ab48b158aff73727c6c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - portalthing: {instanceID: 0}
+  - portalthing2: {instanceID: 0}
+  - player: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

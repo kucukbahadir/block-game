@@ -9,7 +9,7 @@ public class wizard2 : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // Check if the colliding object has the tag "Player"
-        if (collision.gameObject.CompareTag("player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             Quiz1.SetActive(true); // Unhide the Quiz1 panel
             Time.timeScale = 0f; // Pause the game
