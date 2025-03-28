@@ -7,9 +7,19 @@ public class thirdpersonmovement : MonoBehaviour
     [SerializeField] private float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "wizard")
+        {
+            Debug.Log("collide");
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
+        
+        
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
