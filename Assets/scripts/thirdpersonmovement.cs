@@ -5,7 +5,12 @@ public class thirdpersonmovement : MonoBehaviour
     [SerializeField] private CharacterController controller;
     [SerializeField] private float speed = 6f;
     [SerializeField] private float turnSmoothTime = 0.1f;
-    private float turnSmoothVelocity;
+    private float turnSmoothVelocity;// Reference to the MouseLockSystem script
+
+    void Start()
+    {
+        MouseLockSystem.Instance.LockMouse(); // Lock the mouse at the start
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
