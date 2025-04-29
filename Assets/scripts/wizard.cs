@@ -18,7 +18,9 @@ public class wizard : MonoBehaviour
     public GameObject life2;
     public GameObject life3;
     public GameObject GameOverPanel; // Assign the Game Over panel in the Inspector
-
+    public GameObject ExplanationPanel; // Assign the Explanation panel in the Inspector
+    public GameObject Correct;
+    
     
 
     private void Update()
@@ -84,11 +86,19 @@ public class wizard : MonoBehaviour
 
         }
     }
+    public void OnYayButtonClicked()
+    {
+        Correct.SetActive(false);
+        Time.timeScale = 1f; // Resume the game
+    }
+    
     public void OnTrueButtonClicked()
     {
         // Ensure the function works correctly when called by the True button
         if (Quiz1.activeSelf) // Check if the Quiz1 panel is active
         {
+            Quiz1.SetActive(false); // Hide the Quiz1 panel
+            Correct.SetActive(true); // Show the Correct panel
             if (wizardchar1.activeSelf) // Check if Wizard1 is active
             {
                 Quiz1.SetActive(false); // Hide the Quiz1 panel
@@ -97,7 +107,7 @@ public class wizard : MonoBehaviour
                 barrier.SetActive(false); // Hide the barrier
                 wizardchar1.SetActive(false); // Hide the wizard
                 wizardchar2.SetActive(true); // Unhide the wizard
-                Time.timeScale = 1f; // Resume the game
+                
             }
             else if (wizardchar2.activeSelf) // Check if Wizard2 is active
             {
@@ -105,25 +115,35 @@ public class wizard : MonoBehaviour
                 Debug.Log("True button clicked!");
                 portal.SetActive(true); // Unhide the portal
                 wizardchar2.SetActive(false); // Hide the wizard
-                Time.timeScale = 1f; // Resume the game
+                
                 Knight.SetActive(true); // Unhide the Knight
             }
             else if(Knight.activeSelf) // Check if Knight is active
             {
                 Quiz1.SetActive(false); // Hide the Quiz1 panel
                 Debug.Log("True button clicked!");
-                Time.timeScale = 1f; // Resume the game
+                
             }
         }
+    }
+    public void OnOkButtonClicked()
+    {
+        ExplanationPanel.SetActive(false); // Hide the Correct panel
+        Time.timeScale = 1f; // Resume the game
     }
 
     public void OnFalseButtonClicked()
     {
+        Quiz1.SetActive(false); // Hide the Quiz1 panel
+        ExplanationPanel.SetActive(true); // Show the Explanation panel
+        
+            
+
         if (wizardchar1.activeSelf)
         {
             Quiz1.SetActive(false); // Hide the Quiz1 panel
             Debug.Log("False button clicked!");
-            Time.timeScale = 1f; // Resume the game
+            
             lives -= 1; // Decrease lives by 1
             if (lives <= 0) // Check if lives are less than or equal to 0
             {
@@ -135,7 +155,7 @@ public class wizard : MonoBehaviour
         {
             Quiz1.SetActive(false); // Hide the Quiz1 panel
             Debug.Log("False button clicked!");
-            Time.timeScale = 1f; // Resume the game
+            
             lives -= 1; // Decrease lives by 1
             if (lives <= 0) // Check if lives are less than or equal to 0
             {
@@ -147,7 +167,7 @@ public class wizard : MonoBehaviour
         {
             Quiz1.SetActive(false); // Hide the Quiz1 panel
             Debug.Log("False button clicked!");
-            Time.timeScale = 1f; // Resume the game
+            
             lives -= 1; // Decrease lives by 1
             if (lives <= 0) // Check if lives are less than or equal to 0
             {
@@ -155,6 +175,7 @@ public class wizard : MonoBehaviour
                 // Add your game over logic here (e.g., show game over screen, restart level, etc.)
             }
         }
+    
         
     }
 }
