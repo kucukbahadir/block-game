@@ -13,6 +13,7 @@ public class wizard2 : MonoBehaviour
         {
             Quiz1.SetActive(true); // Unhide the Quiz1 panel
             Time.timeScale = 0f; // Pause the game
+            MouseLockSystem.Instance.UnlockMouse(); // Unlock the mouse cursor
         }
     }
     public void OnTrueButtonClicked()
