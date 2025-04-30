@@ -28,7 +28,6 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
-        MouseLockSystem.Instance.LockMouse(); // Lock the mouse cursor
     }
 
     void Pause()
@@ -36,7 +35,6 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
-        MouseLockSystem.Instance.UnlockMouse(); // Unlock the mouse cursor
     }
 
     public void QuitGame()
