@@ -32,6 +32,8 @@ public class EduanaManager : MonoBehaviour
             Instance = this;
         }
 
+        TotalReset();
+
         StartCoroutine(FetchKeywords());
         SetUpCurrentKeywordInfo();
     }
@@ -62,8 +64,9 @@ public class EduanaManager : MonoBehaviour
 
     }
 
-    public IEnumerator SendKeywords(bool answerResult)
+    public IEnumerator SendKeywordProgress(bool answerResult)
     {
+        print(answerResult);
         var keywordsClass = new KeywordProgress(_currentKeyword.id, answerResult, DateTime.Now.ToString());
 
         var json = JsonUtility.ToJson(keywordsClass);
