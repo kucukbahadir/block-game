@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using UnityEngine.Networking;
 using System;
 using System.Collections;
+using NUnit.Framework.Internal;
 
 public class EduanaManager : MonoBehaviour
 {
@@ -54,11 +55,16 @@ public class EduanaManager : MonoBehaviour
 
             if (request.result == UnityWebRequest.Result.Success)
             {
-                print("Request handled successfully");
+                var jsonText = request.downloadHandler.text;
+                print("Request handled successfully ");
+
+                var keywordsContainer = DeconstructJson(jsonText);
+
+                SetKeywordsInKeywordList(keywordsContainer);
             }
             else
             {
-                Debug.LogError("Failed to get keywords. Request result: " + request.result);
+                Debug.LogError("Failed to get keywords. Request result: " + request.result + " response code: " + request.responseCode);
             }
         }
 
