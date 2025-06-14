@@ -20,6 +20,7 @@ public class EduanaManager : MonoBehaviour
 
     private Keyword _currentKeyword;
     private int _currentQuestionIndex;
+    private string _currentStudentId;
 
 
     private void Awake()
@@ -50,7 +51,7 @@ public class EduanaManager : MonoBehaviour
         }
         else
         {
-            var request = UnityWebRequest.Get(apiURLContainer.RequestKeywordsApiURL);
+            var request = UnityWebRequest.Get($"localhost:3000/api/students/{_currentStudentId}/next-keywords");
             yield return request.SendWebRequest();
 
             if (request.result == UnityWebRequest.Result.Success)
@@ -78,7 +79,7 @@ public class EduanaManager : MonoBehaviour
         var json = JsonUtility.ToJson(keywordsClass);
         var bytes = System.Text.Encoding.UTF8.GetBytes(json);
 
-        var request = new UnityWebRequest(apiURLContainer.SendKeywordProgressApiURL, "PUT");
+        var request = new UnityWebRequest("", "PUT");
 
 
         request.uploadHandler = new UploadHandlerRaw(bytes);
@@ -96,6 +97,11 @@ public class EduanaManager : MonoBehaviour
     private KeywordsContainer DeconstructJson(string JsonString)
     {
         return JsonConvert.DeserializeObject<KeywordsContainer>(JsonString);
+    }
+
+    public void GiveStudentId(string studentId)
+    {
+        _currentStudentId = studentId;
     }
 
     public Question GetNextKeywordQuestion()
