@@ -5,6 +5,7 @@ using UnityEngine.Networking;
 using System;
 using System.Collections;
 using NUnit.Framework.Internal;
+using UnityEngine.SceneManagement;
 
 public class EduanaManager : MonoBehaviour
 {
@@ -16,10 +17,10 @@ public class EduanaManager : MonoBehaviour
     [SerializeField] private List<Keyword> keywords = new List<Keyword>();
     [SerializeField] private bool autoFetch = true;
     [SerializeField] private bool showKeywordList;
+    [SerializeField] private string _currentStudentId;
 
     private Keyword _currentKeyword;
     private int _currentQuestionIndex;
-    private string _currentStudentId;
 
 
     private void Awake()
@@ -34,7 +35,11 @@ public class EduanaManager : MonoBehaviour
         }
 
         TotalReset();
+        DontDestroyOnLoad(this.gameObject);
+    }
 
+    private void Start()
+    {
         StartCoroutine(FetchKeywords());
         SetUpCurrentKeywordInfo();
     }
@@ -50,7 +55,7 @@ public class EduanaManager : MonoBehaviour
         }
         else
         {
-            var request = UnityWebRequest.Get($"localhost:3000/api/students/{_currentStudentId}/next-keywords");
+            var request = UnityWebRequest.Get($"http://localhost:3000/api/students/{_currentStudentId}/next-keywords");
             yield return request.SendWebRequest();
 
             if (request.result == UnityWebRequest.Result.Success)
@@ -78,7 +83,7 @@ public class EduanaManager : MonoBehaviour
         var json = JsonUtility.ToJson(keywordsClass);
         var bytes = System.Text.Encoding.UTF8.GetBytes(json);
 
-        var request = new UnityWebRequest($"localhost:3000/api/students/{_currentStudentId}/flush-progress", "POST");
+        var request = new UnityWebRequest($"http://localhost:3000/api/students/{_currentStudentId}/flush-progress", "POST");
 
 
         request.uploadHandler = new UploadHandlerRaw(bytes);

@@ -20,8 +20,8 @@ public class wizard : MonoBehaviour
     public GameObject GameOverPanel; // Assign the Game Over panel in the Inspector
     public GameObject ExplanationPanel; // Assign the Explanation panel in the Inspector
     public GameObject Correct;
-    
-    
+
+
 
     private void Update()
     {
@@ -53,7 +53,7 @@ public class wizard : MonoBehaviour
             Debug.Log("Game Over!"); // Log game over message
             GameOverPanel.SetActive(true); // Show the Game Over panel
             Time.timeScale = 0f; // Pause the game
-            
+
         }
     }
     public void onClickRetryButton()
