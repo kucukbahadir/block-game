@@ -11,7 +11,6 @@ public class EduanaManager : MonoBehaviour
     public static EduanaManager Instance;
 
     [SerializeField] private int minimumKeywordAmountBeforeFetching = 2;
-    [SerializeField] private ApiURLContainer apiURLContainer;
     [SerializeField] private bool useLocalJSON;
     [SerializeField] private TextAsset localJSONFile;
     [SerializeField] private List<Keyword> keywords = new List<Keyword>();
@@ -79,7 +78,7 @@ public class EduanaManager : MonoBehaviour
         var json = JsonUtility.ToJson(keywordsClass);
         var bytes = System.Text.Encoding.UTF8.GetBytes(json);
 
-        var request = new UnityWebRequest("", "PUT");
+        var request = new UnityWebRequest($"localhost:3000/api/students/{_currentStudentId}/flush-progress", "POST");
 
 
         request.uploadHandler = new UploadHandlerRaw(bytes);

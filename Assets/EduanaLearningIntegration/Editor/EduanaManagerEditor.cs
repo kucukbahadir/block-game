@@ -9,7 +9,6 @@ public class EduanaManagerEditor : Editor
     private Color _LabelBoxColor = Color.blue;
 
     private SerializedProperty _minimumKeywordAmountBeforeFetching;
-    private SerializedProperty _apiURLContainer;
     private SerializedProperty _useLocalJSON;
     private SerializedProperty _localJSONFile;
     private SerializedProperty _keywords;
@@ -22,7 +21,6 @@ public class EduanaManagerEditor : Editor
         _normalBackgroundColor = GUI.backgroundColor;
 
         _minimumKeywordAmountBeforeFetching = serializedObject.FindProperty("minimumKeywordAmountBeforeFetching");
-        _apiURLContainer = serializedObject.FindProperty("apiURLContainer");
         _useLocalJSON = serializedObject.FindProperty("useLocalJSON");
         _localJSONFile = serializedObject.FindProperty("localJSONFile");
         _keywords = serializedObject.FindProperty("keywords");
@@ -46,9 +44,6 @@ public class EduanaManagerEditor : Editor
         {     
             EditorGUILayout.PropertyField(_minimumKeywordAmountBeforeFetching);
         }
-
-        CreateLabelBox("Api settings");
-        EditorGUILayout.PropertyField(_apiURLContainer);
 
         CreateLabelBox("Debug settings");
         EditorGUILayout.PropertyField(_showKeywordList);
