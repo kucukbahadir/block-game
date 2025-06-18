@@ -7706,6 +7706,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EduanaManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8864559580760452091, guid: 4972981236d79174798e48d2223c3e49, type: 3}
+      propertyPath: useLocalJSON
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
