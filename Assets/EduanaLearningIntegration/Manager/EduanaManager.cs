@@ -55,7 +55,9 @@ public class EduanaManager : MonoBehaviour
         }
         else
         {
-            var request = UnityWebRequest.Get($"http://localhost:3000/api/students/{_currentStudentId}/next-keywords");
+            var request = UnityWebRequest.Get($"http://localhost:3000/api/students/next-keywords");
+
+            request.SetRequestHeader("Authorization", $"Bearer {_currentStudentId}"); 
             yield return request.SendWebRequest();
 
             if (request.result == UnityWebRequest.Result.Success)
@@ -83,12 +85,13 @@ public class EduanaManager : MonoBehaviour
         var json = JsonUtility.ToJson(keywordsClass);
         var bytes = System.Text.Encoding.UTF8.GetBytes(json);
 
-        var request = new UnityWebRequest($"http://localhost:3000/api/students/{_currentStudentId}/flush-progress", "POST");
+        var request = new UnityWebRequest($"http://localhost:3000/api/students/flush-progress", "POST");
 
 
         request.uploadHandler = new UploadHandlerRaw(bytes);
         request.downloadHandler = new DownloadHandlerBuffer();
         request.SetRequestHeader("Content-Type", "application/json");
+        request.SetRequestHeader("Authorization", $"Bearer {_currentStudentId}"); 
 
         yield return request.SendWebRequest();
 
