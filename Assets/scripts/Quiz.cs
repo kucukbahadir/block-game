@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class Quiz : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI questionText;
+    [SerializeField] private TextMeshProUGUI explainText;
 
     [SerializeField] private List<AnswerUI> answerUIs = new List<AnswerUI>();
 
@@ -32,6 +33,7 @@ public class Quiz : MonoBehaviour
         }
         else
         {
+            explainText.text = _currentQuestion.correct_answer_description;
             OnQuizEndedWrongAnswer?.Invoke();
         }
         EduanaManager.Instance.StartCoroutine(EduanaManager.Instance.SendKeywordProgress(answeredCorrectly));
